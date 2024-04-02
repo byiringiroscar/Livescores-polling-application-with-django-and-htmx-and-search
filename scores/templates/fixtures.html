@@ -29,7 +29,9 @@
             hx-get="{% url 'fixtures' %}" 
             hx-trigger="every 20s" 
             hx-swap="innerHTML"
-            hx-indicator="#spinner" >
+            hx-indicator="#spinner"
+            hx-vals="js:{search: document.getElementById('search-input').value}"
+             >
       {% endif %}
         {% include 'partials/fixturelist.html' %} 
     </div>
