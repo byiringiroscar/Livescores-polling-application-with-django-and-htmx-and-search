@@ -21,9 +21,20 @@
     {% if all_completed %}
     <div id="fixturelist-container">
       {% else %}
-    <div id="fixturelist-container" hx-get="{% url 'fixtures' %}" hx-trigger="every 5s" hx-swap="innerHTML">
+    <div id="fixturelist-container" 
+    hx-get="{% url 'fixtures' %}" 
+    hx-trigger="every 5s" 
+    hx-swap="innerHTML"
+    hx-indicator="#spinner"
+    >
       {% endif %}
         {% include 'partials/fixturelist.html' %} 
     </div>
   </main>
+
+  <div id="spinner" class="htmx-indicator indicator-style">
+    <div class="spinner-grow text-primary" style="width: 6rem; height: 6rem;">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 {% endblock content %}

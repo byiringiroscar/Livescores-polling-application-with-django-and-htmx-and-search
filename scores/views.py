@@ -18,6 +18,8 @@ def fixtures(request):
 
     }
     if request.htmx:
+        import time
+        time.sleep(0.6)
         if all_completed:
             response = render(request, 'partials/fixturelist.html', context)
             response['HX-Refresh'] = 'true'
